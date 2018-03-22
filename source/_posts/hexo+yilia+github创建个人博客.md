@@ -36,10 +36,10 @@ tags: 博客搭建
 
 1. 首先需要注册一个 OAuth application，注册地址，[点这里跳转](https://github.com/settings/applications/new)
 2. 注册时主要填三个东西 `Application Name` 随便填;`HomePage URL`保存评论的项目地址，我是新建了一个项目作为博客评论的项目（也可以先随便填一个，但必须已有的项目，之后还可以改）;**最后一个参数要特别注意`callback URL`这要填自己的博客地址比如:`lizhiwei.net`
-3. 在主题中配置Gitment,因为yilia主题已经适配了Gitment，所以只需要进入到主题的_config.yml中，然后在Gitment栏填写相应的信息，
+3. 在主题中配置Gitment,因为yilia主题已经适配了Gitment，所以只需要进入到主题的`_config.yml`中，然后在Gitment栏填写相应的信息，
 
 ```
-#5、Gitment
+
 gitment_owner:       #你的 GitHub ID
 gitment_repo:''          # 这里就是你在注册时设置的HomePage URL项目的名字
 gitment_oauth:
@@ -48,4 +48,83 @@ gitment_oauth:
 ```
 
 Gitment新添加好之后进入博客后会发现没有评论栏，但会有一个评论初始化的按钮，这个按钮只有第一次进入的时候有，点一下就有评论栏了，但如果有很多博客每个都要点一次也是很麻烦的。还好我才刚开始！不过作者也有说要在之后的版本中添加批量初始化的脚本！
+
+2018.03.22添加
+
+#### 设置多端同步
+
+**参考文章**
+
+[如何解决github+Hexo的博客多终端同步问题](http://blog.csdn.net/Monkey_LZL/article/details/60870891)
+
+##### 1.提交源文件
+
+在博客项目上新建分支来保存博客的源码
+
+```git
+
+git init //初始化本地仓库
+git add source //将必要的文件依次添加
+git commit -m"log"
+git branch hexo //新建hexo分支
+git checkout hexo //切换到hexo分支
+git remote add origin 你的github地址(git@github.com:yourname/youname.github.io.git)youname 换成自己的github用户名
+git push origin hexo //push 到项目的hexo分支
+
+```
+
+我同步到hexo分支的内容包括 source文件夹、scaffolds文件夹、themes(这个是主题文件的文件夹，可以只同步自己需要的，注意：如果是从github上git下来的，需要删除掉相应主题文件夹内的.git文件）、`_config.yml`(这个要同步，要不还要重新设置）、packge.json、.npmignore（这个不知道为什么，又知道的可以告诉我^0^）。
+
+提交完成后其实就是你已经把你本地的基础设置和文章的markdown文件保存到了分支上了。后续其他设备只需要从分支上clone下来就行了，日常使用只需要每次更新source文件夹就能保持多段同步了。
+
+##### 2. 其他设备上第一次使用hexo
+
+前提条件：安装了 git， nodejs
+
+1. 先从分支上clone下来hexo分支 
+`git clone -b hexo 你的github地址` 
+2. 进入到刚刚clone下来的文件夹内,然后安装hexo，这样的好处是不需要再init了
+`cd youname.github.io`
+`npm install hexo-cli -g`
+3. 到此就算完成了，新建个笔记验证一下
+`hexo new test`
+4. 之后就是需要将新添加的笔记同步到分支上了，因为只是在source中增加了源文件，所以只同步source文件就可以了。
+`git add source`
+`git commit -m "add test"`
+`git push origin hexo //更新分支`
+
+4. 更新文章到博客
+`hexo d -g`
+
+中间如果没有其他错误的话，此时博客中应该已经有了这篇文章。
+
+
+
+##### 3. 不同设备都配置完成了之后
+
+```
+git pull origin hexo //先pull，完成本地与远端的同步
+hexo new 文章标题
+git commit -m"提交新文章"
+git push origin hexo //提交分支
+hexo d -g // 更新博客
+
+```
+
+
+
+#### Nodejs 安装
+
+linux 建议直接下载编译好的二进制文件，然后自己配置下环境变量将bin目录加到环境变量中。
+
+
+
+
+
+```
+
+
+
+
+
 
