@@ -46,6 +46,11 @@
       <% } else { %>
         <%- post.content %>
       <% } %>
+      <!-- 版权内容开始 -->
+      <% if (!index && post.copyright==true){ %>
+          <%- partial('post/copyright') %>
+              <% } %>
+              <!-- 版权内容结束 -->
 
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
