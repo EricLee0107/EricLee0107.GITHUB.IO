@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://lizhiwei.net">
   <title>Golang-Basic-数组 | 李志伟的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int">
+  <meta name="description" content="数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int&amp;#1">
 <meta name="keywords" content="Golang">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Golang-Basic-数组">
 <meta property="og:url" content="http://lizhiwei.net/2018/02/13/Golang-Basic-数组/index.html">
 <meta property="og:site_name" content="李志伟的个人博客">
-<meta property="og:description" content="###数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int">
+<meta property="og:description" content="数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int&amp;#1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T15:19:32.672Z">
+<meta property="og:updated_time" content="2018-04-03T14:13:50.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Golang-Basic-数组">
-<meta name="twitter:description" content="###数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int">
+<meta name="twitter:description" content="数组的定义一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。 基本特征 内存连续 容易计算索引 访问速度快 数组声明之后数组的数据类型和长度是不可改变的  数组的声明和初始化12// 声明一个长度为5的整型数组var array [5]int 字面量声明数组字面量声明数组可以快速创建数组并进行初始化。 12// 声明一个长度为5的整型数组，并进行初始化arrar := [5]int&amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="李志伟的个人博客" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###数组的定义<br>一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。</p>
+        <h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><p>一个有固定长度的，用于存储一段具有相同的类型的元素的连续块。</p>
 <h4 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h4><ul>
 <li>内存连续</li>
 <li>容易计算索引</li>
@@ -185,7 +185,6 @@
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明并初始化第三个值(索引为2)为100的数组</span></span><br><span class="line">array := [<span class="number">5</span>]<span class="keyword">int</span>&#123;<span class="number">3</span>:<span class="number">100</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>这样声明的array数组初始时 array[2]=100, 其他均为int类型的零值(0)。</p>
 <p>一般如果数组太大在传递时尽量使用指针，避免占用太多空间</p>
-<p>持续更新中。。。</p>
 
       
       <!-- 版权内容开始 -->
@@ -522,15 +521,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Golang</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Go基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,10 +541,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Go常用包</a>
               </li>
              
@@ -554,7 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +561,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
+                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,7 +573,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
               </li>
             
             <div class="clearfix"></div>
