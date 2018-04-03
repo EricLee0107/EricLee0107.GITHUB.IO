@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://lizhiwei.net">
   <title>test | 李志伟的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="testtest">
+<meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="http://lizhiwei.net/2018/04/03/test/index.html">
 <meta property="og:site_name" content="李志伟的个人博客">
+<meta property="og:description" content="testtest">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-03T14:14:26.601Z">
+<meta property="og:updated_time" content="2018-04-03T14:31:51.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
+<meta name="twitter:description" content="testtest">
   
     <link rel="alternative" href="/atom.xml" title="李志伟的个人博客" type="application/atom+xml">
   
@@ -153,7 +156,7 @@
 
         
         <a href="/2018/04/03/test/" class="archive-article-date">
-  	<time datetime="2018-04-03T14:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
+  	<time datetime="2018-04-03T14:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
 </a>
         
       </header>
@@ -161,14 +164,73 @@
     
     <!-- 目录内容 -->
     
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#test"><span class="toc-number">1.</span> <span class="toc-text">test</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#test-1"><span class="toc-number">1.1.</span> <span class="toc-text">test</span></a></li></ol></li></ol>
+            </div>
+            <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+            };
+        function showBtn(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:none");
+            show_toc_btn.setAttribute("style","display:block");
+        };
+        </script>
+            
             <!-- 目录内容结束 -->
 
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><h3 id="test-1"><a href="#test-1" class="headerlink" title="test"></a>test</h3>
       
       <!-- 版权内容开始 -->
       
+          <! -- 添加版权信息 -->
+<! -- 设置版权信息格式 -->
+<style type="text/css">
+div.article-footer-copyright{
+    border-top:1px solid #d3d3d3;
+    margin: 20px auto;     
+    padding-left:2em;
+    width: 80%;
+}
+div.article-footer-copyright span,.copyright abbr{
+    color:#3d3d3d;
+}
+div.article-footer-copyright{
+        margin-top:2em;
+        padding:1.5em;
+        border:1px solid #d3d3d3;
+        background-color:#DEEBF7;
+}
+div.article-footer-copyright {
+        line-height: 160%;
+        margin: 10px;
+        font-size: 90%;
+        color: #A3A3A3
+}
+</style>
+<br>
+<!-- 版权信息内容在这里 -->
+<div class="article-footer-copyright">
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="李志伟">李志伟</a></b>,本文标题为<b><a href="/2018/04/03/test/" target="_blank" title="test">test</a></b></center>
+
+<center>本文链接为<b><a href="/2018/04/03/test/" target="_blank" title="test">http://lizhiwei.net/2018/04/03/test/</a></b></center>
+</div>
+<! -- 添加版权信息 -->
+
+              
               <!-- 版权内容结束 -->
 
       
@@ -294,6 +356,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#test"><span class="toc-number">1.</span> <span class="toc-text">test</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#test-1"><span class="toc-number">1.1.</span> <span class="toc-text">test</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
