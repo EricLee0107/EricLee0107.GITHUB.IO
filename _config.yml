@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-horl: http://lizhiwei.net
+url: http://lizhiwei.net
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -81,6 +81,10 @@ deploy:
   repository: git@github.com:EricLee0107/EricLee0107.GITHUB.IO.git
   branch: master
 
+metadata:
+	toc: true
+	copyright: true
+  
 jsonContent:
     meta: false
     pages: false
