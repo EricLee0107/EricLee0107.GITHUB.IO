@@ -1,7 +1,8 @@
----
 title: Linux学习笔记-磁盘与文件管理系统
+tags:
+  - Linux学习
+  - 个人笔记
 date: 2018-02-01 11:18:07
-tags: [Linux学习,个人笔记]
 ---
 ### 软连接与实体(硬)连接
 
@@ -24,7 +25,7 @@ tags: [Linux学习,个人笔记]
 #### 软连接与硬链接模式对比
 
 硬链接示意图（图片来源于《Linux鸟哥私房菜》）
-![hard link](/img/linux_hard_link.png)
+![hard link](/img/linux_hard_link.jpg)
 
 软连接示意图（图片来源于《Linux鸟哥私房菜》）
-![symbolic link](/img/linux_symoblic_link.png)
+![symbolic link](/img/linux_symoblic_link.jpg)

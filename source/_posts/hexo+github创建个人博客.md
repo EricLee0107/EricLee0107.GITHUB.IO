@@ -1,8 +1,9 @@
----
-title: hexo + github创建个人博客中遇到的一些问题
-date: 2017-12-30 22:04:32
-tags: 博客搭建
-
+title: hexo + github创建个人博客
+tags:
+  - 博客搭建
+categories: []
+author: EricLee
+date: 2017-12-30 22:04:00
 ---
 关于博客的创建可以参考下面这两篇博客：
 [使用hexo+github搭建免费个人博客详细教程](http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa)
@@ -49,6 +50,15 @@ gitment_oauth:
 
 Gitment新添加好之后进入博客后会发现没有评论栏，但会有一个评论初始化的按钮，这个按钮只有第一次进入的时候有，点一下就有评论栏了，但如果有很多博客每个都要点一次也是很麻烦的。还好我才刚开始！不过作者也有说要在之后的版本中添加批量初始化的脚本！
 
+---
+2018.04.03 添加
+
+**常见问题**
+
+问题：点击Initialize Comments后弹出窗口提示 Error：Validation Failed
+解决：这个问题是因为文件名过长导致的，将文件名改短一点就可以了。创建文件时尽量简短，然后在文章中在修改title。
+
+---
 2018.03.22添加
 
 #### 设置多端同步
@@ -122,9 +132,3 @@ linux 建议直接下载编译好的二进制文件，然后自己配置下环�
 
 
 ```
-
-
-
-
-
-
