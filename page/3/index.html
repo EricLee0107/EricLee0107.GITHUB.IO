@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://lizhiwei.net">
+  <link rel="dns-prefetch" href="http://www.lizhiwei.net">
   <title>李志伟的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="李志伟的个人博客">
-<meta property="og:url" content="http://lizhiwei.net/page/3/index.html">
+<meta property="og:url" content="http://www.lizhiwei.net/page/3/index.html">
 <meta property="og:site_name" content="李志伟的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -32,6 +32,23 @@
 
   
 
+  {% if theme.baidu_push %}
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+{% endif %}
+
 </head>
 
 <body>
@@ -43,7 +60,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/lizhiwei.jpg" class="js-avatar">
+			<img src="https://portal.qiniu.com/touxiang.jpg-lzw" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">李志伟</a></h1>
@@ -93,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/lizhiwei.jpg" class="js-avatar">
+				<img src="https://portal.qiniu.com/touxiang.jpg-lzw" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">李志伟</h1>
@@ -134,105 +151,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-go常用包之strconv包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/go常用包之strconv包/">go常用包之strconv包</a>
-    </h1>
-  
-
-
-
-    <a href="javascript:;" class="archive-article-date">
-        <i class="icon-smile icon"></i> 阅读数:<span id="/2018/01/04/go常用包之strconv包/" class="pageViews">0</span>次
-        </a>
-        
-
-        
-        <a href="/2018/01/04/go常用包之strconv包/" class="archive-article-date">
-  	<time datetime="2018-01-04T06:54:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    
-    <!-- 目录内容 -->
-    
-            <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="atob-go"><a href="#atob-go" class="headerlink" title="atob.go"></a>atob.go</h4><p><code>func ParseBool(str string) (bool,error)</code></p>
-<p>将字符串转为布尔值<br>只接受<code>1,t,T,TRUE,true,True,0,f,F,FALSE,false,False</code> 其他任何值都返回Err</p>
-<p><strong>示例：</strong><br>
-        
-          <a class="article-more-a" href="/2018/01/04/go常用包之strconv包/#more">more >></a>
-        
-      
-      <!-- 版权内容开始 -->
-      
-              <!-- 版权内容结束 -->
-
-      
-    </div>
-
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Go常用包</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">包函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-go常用包之io包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -240,19 +158,19 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/03/go常用包之io包/">go常用包之io包（函数）</a>
+      <a class="article-title" href="/go常用包之io包.html">go常用包之io包（函数）</a>
     </h1>
   
 
 
 
     <a href="javascript:;" class="archive-article-date">
-        <i class="icon-smile icon"></i> 阅读数:<span id="/2018/01/03/go常用包之io包/" class="pageViews">0</span>次
+        <i class="icon-smile icon"></i> 阅读数:<span id="/go常用包之io包.html" class="pageViews">0</span>次
         </a>
         
 
         
-        <a href="/2018/01/03/go常用包之io包/" class="archive-article-date">
+        <a href="/go常用包之io包.html" class="archive-article-date">
   	<time datetime="2018-01-03T05:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
 </a>
         
@@ -267,7 +185,7 @@
       
         <h4 id="io包中的函数"><a href="#io包中的函数" class="headerlink" title="io包中的函数"></a>io包中的函数</h4><p><code>func WriteString(w Writer, s String)(n int, err error)</code><br><strong>功能：</strong>将字符串s写入到w中,如果w实现了WriteString方法，则直接调用它。<br><strong>返回值：</strong>返回写入的字节数和写入过程中遇到的任何错误。<br><strong>实例：</strong><br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"io"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"os"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// os.Stdout 实现了 Writer 接口</span></span><br><span class="line">    io.WriteString(os.Stdout, <span class="string">"Hello World!"</span>)</span><br><span class="line">    <span class="comment">// Hello World!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/2018/01/03/go常用包之io包/#more">more >></a>
+          <a class="article-more-a" href="/go常用包之io包.html#more">more >></a>
         
       
       <!-- 版权内容开始 -->
@@ -330,27 +248,27 @@
 
 
   
-    <article id="post-hexo+yilia+github创建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo+github创建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/30/hexo+yilia+github创建个人博客/">hexo + github创建个人博客中遇到的一些问题</a>
+      <a class="article-title" href="/hexo+github创建个人博客.html">hexo + github创建个人博客</a>
     </h1>
   
 
 
 
     <a href="javascript:;" class="archive-article-date">
-        <i class="icon-smile icon"></i> 阅读数:<span id="/2017/12/30/hexo+yilia+github创建个人博客/" class="pageViews">0</span>次
+        <i class="icon-smile icon"></i> 阅读数:<span id="/hexo+github创建个人博客.html" class="pageViews">0</span>次
         </a>
         
 
         
-        <a href="/2017/12/30/hexo+yilia+github创建个人博客/" class="archive-article-date">
-  	<time datetime="2017-12-30T14:04:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
+        <a href="/hexo+github创建个人博客.html" class="archive-article-date">
+  	<time datetime="2017-12-30T14:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
 </a>
         
       </header>
@@ -364,7 +282,7 @@
       
         <p>关于博客的创建可以参考下面这两篇博客：<br><a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a><br><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="noopener">史上最详细的Hexo博客搭建图文教程</a><br>我这里写的只是我自己在搭建过程中遇到的一些问题。<br>也以此篇博客来开启我的博客航程~<br>
         
-          <a class="article-more-a" href="/2017/12/30/hexo+yilia+github创建个人博客/#more">more >></a>
+          <a class="article-more-a" href="/hexo+github创建个人博客.html#more">more >></a>
         
       
       <!-- 版权内容开始 -->
@@ -482,7 +400,7 @@ function showTime() {
     if(isIndex){
         $(".pageViews").each(function(){
                 showPageViewsNum($(this),Counter);
-                addPageViewsNum($(this));
+               // addPageViewsNum($(this));
                 });
     }else{
         showPageViewsNum($(".pageViews"),Counter);
@@ -580,11 +498,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +522,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Go常用包</a>
               </li>
              
@@ -620,19 +542,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">游戏开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">AI行为树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
               </li>
             
             <div class="clearfix"></div>

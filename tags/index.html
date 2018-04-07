@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://lizhiwei.net">
+  <link rel="dns-prefetch" href="http://www.lizhiwei.net">
   <title>tags | 李志伟的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="tags">
-<meta property="og:url" content="http://lizhiwei.net/tags/index.html">
+<meta property="og:url" content="http://www.lizhiwei.net/tags/index.html">
 <meta property="og:site_name" content="李志伟的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-04-02T15:19:32.740Z">
@@ -33,6 +33,23 @@
 
   
 
+  {% if theme.baidu_push %}
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+{% endif %}
+
 </head>
 
 <body>
@@ -44,7 +61,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/lizhiwei.jpg" class="js-avatar">
+			<img src="https://portal.qiniu.com/touxiang.jpg-lzw" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">李志伟</a></h1>
@@ -94,7 +111,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/lizhiwei.jpg" class="js-avatar">
+				<img src="https://portal.qiniu.com/touxiang.jpg-lzw" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">李志伟</h1>
@@ -259,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://lizhiwei.net/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.lizhiwei.net/tags/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,7 +364,7 @@ function showTime() {
     if(isIndex){
         $(".pageViews").each(function(){
                 showPageViewsNum($(this),Counter);
-                addPageViewsNum($(this));
+               // addPageViewsNum($(this));
                 });
     }else{
         showPageViewsNum($(".pageViews"),Counter);
@@ -445,11 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
+                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Golang</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,6 +486,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Go常用包</a>
               </li>
              
@@ -485,19 +506,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">游戏开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">AI行为树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">游戏AI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vim安装</a>
               </li>
             
             <div class="clearfix"></div>
