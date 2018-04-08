@@ -12,9 +12,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://lizhiwei.net
+url: http://www.lizhiwei.net
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title.html
 permalink_defaults:
 
 # Directory
@@ -80,10 +80,19 @@ deploy:
   type: git
   repository: git@github.com:EricLee0107/EricLee0107.GITHUB.IO.git
   branch: master
-
+  -type: baidu_url_submitter
+  
+  
+baidu_url_submit:
+  count: 1
+  host: www.lizhiwei.net
+  token: token
+  path: baidu_urls.txt
+  
 metadata:
 	toc: true
 	copyright: true
+  
   
 jsonContent:
     meta: false
