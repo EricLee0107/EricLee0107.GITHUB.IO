@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.lizhiwei.net">
-  <title>Archives: 2018 | 李志伟的个人博客</title>
+  <title>关于项目中AI行为树改进的一些思考 | 李志伟的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="李志伟的个人博客">
-<meta property="og:url" content="http://www.lizhiwei.net/archives/2018/page/14/index.html">
+  <meta name="description" content="最近项目增加大量的怪物AI，涉及到一些持续性的动作（跑向目标点、追击敌人等），之前的AI虽然是用行为树的想法做的，但对于持续动作状态的终止都是通过在代码中加条件判断实现的。所以不能达到“写好条件、动作，其他的让策划来”的目的。所以觉得需要改进一下~ 这里对整个过程的思考做下记录，有些地方也还没有想明白。">
+<meta name="keywords" content="游戏AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于项目中AI行为树改进的一些思考">
+<meta property="og:url" content="http://www.lizhiwei.net/项目中AI实现.html">
 <meta property="og:site_name" content="李志伟的个人博客">
+<meta property="og:description" content="最近项目增加大量的怪物AI，涉及到一些持续性的动作（跑向目标点、追击敌人等），之前的AI虽然是用行为树的想法做的，但对于持续动作状态的终止都是通过在代码中加条件判断实现的。所以不能达到“写好条件、动作，其他的让策划来”的目的。所以觉得需要改进一下~ 这里对整个过程的思考做下记录，有些地方也还没有想明白。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-11T15:09:50.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李志伟的个人博客">
+<meta name="twitter:title" content="关于项目中AI行为树改进的一些思考">
+<meta name="twitter:description" content="最近项目增加大量的怪物AI，涉及到一些持续性的动作（跑向目标点、追击敌人等），之前的AI虽然是用行为树的想法做的，但对于持续动作状态的终止都是通过在代码中加条件判断实现的。所以不能达到“写好条件、动作，其他的让策划来”的目的。所以觉得需要改进一下~ 这里对整个过程的思考做下记录，有些地方也还没有想明白。">
   
     <link rel="alternative" href="/atom.xml" title="李志伟的个人博客" type="application/atom+xml">
   
@@ -147,74 +152,290 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-项目中AI实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Go_运算符.html" class="archive-article-date">
-  	<time datetime="2018-01-06T03:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Go_运算符.html">Golang基础--运算符</a>
+    <h1 class="article-title" itemprop="name">
+      关于项目中AI行为树改进的一些思考
     </h1>
   
 
 
 
     <a href="javascript:;" class="archive-article-date">
-        <i class="icon-smile icon"></i> 阅读数:<span id="/Go_运算符.html" class="pageViews">0</span>次
+        <i class="icon-smile icon"></i> 阅读数:<span id="/项目中AI实现.html" class="pageViews">0</span>次
         </a>
         
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/项目中AI实现.html" class="archive-article-date">
+  	<time datetime="2018-04-11T13:46:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+</a>
+        
+      </header>
+    
+    
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于节点划分"><span class="toc-number">1.</span> <span class="toc-text">关于节点划分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#瞬间动作节点"><span class="toc-number">1.1.</span> <span class="toc-text">瞬间动作节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持续动作节点"><span class="toc-number">1.2.</span> <span class="toc-text">持续动作节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于持续动作节点的Running状态"><span class="toc-number">2.</span> <span class="toc-text">关于持续动作节点的Running状态</span></a></li></ol>
+            </div>
+            <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+            };
+        function showBtn(){
+            var toc_article = document.getElementById("toc-article");
+            var show_toc_btn = document.getElementById("show-toc-btn");
+            toc_article.setAttribute("style","display:none");
+            show_toc_btn.setAttribute("style","display:block");
+        };
+        </script>
+            
+            <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目增加大量的怪物AI，涉及到一些持续性的动作（跑向目标点、追击敌人等），之前的AI虽然是用行为树的想法做的，但对于持续动作状态的终止都是通过在代码中加条件判断实现的。所以不能达到“写好条件、动作，其他的让策划来”的目的。所以觉得需要改进一下~ 这里对整个过程的思考做下记录，有些地方也还没有想明白。<br><a id="more"></a></p>
+<h3 id="关于节点划分"><a href="#关于节点划分" class="headerlink" title="关于节点划分"></a>关于节点划分</h3><h4 id="瞬间动作节点"><a href="#瞬间动作节点" class="headerlink" title="瞬间动作节点"></a>瞬间动作节点</h4><p><strong>瞬间动作节点:</strong> 主要是完成一些瞬间动作，整个动作过程是瞬间完成。例如,选择一个仇恨目标。 执行返回:success,failure</p>
+<h4 id="持续动作节点"><a href="#持续动作节点" class="headerlink" title="持续动作节点"></a>持续动作节点</h4><p><strong>持续动作节点：</strong> 与瞬间动作相对，整个动作过程需要经历持续一段时间。例如,跑到某一点。  执行返回：success,running,failure<br>持续动作节点需要包含：进入节点的逻辑、loop中节点Running的处理逻辑、节点终止的逻辑。</p>
+<h3 id="关于持续动作节点的Running状态"><a href="#关于持续动作节点的Running状态" class="headerlink" title="关于持续动作节点的Running状态"></a>关于持续动作节点的Running状态</h3><p>在AI行为中有时一个状态会持续很久，如果没有running，AI会继续从行为树的根节点开始遍历，但最终仍然会继续执行之前执行过得动作，在这个过程中如果存在计算量很大的条件判断就会浪费系统资源。所以引入了running状态，如果一个AI一直处于某个行为的running状态下，只需要判断这个行为的前置条件（终止条件），如果可以继续则直接执行该行为节点的Running逻辑。</p>
+<p>在AI对象上保存当前Running的<strong>持续动作节点</strong>以及其终止条件列表（任何一个条件满足都会让Running终止），在AI的Running终止时需要进入到节点终止的逻辑，对于不同条件造成的终止进行不同的处理，并返回failiure或者success。</p>
+<p>进入节点的逻辑主要是开始执行一个行为，可能返回失败（寻路失败），或者running，如果返回running则保存AI当前Running的<strong>持续动作节点</strong>以及其终止条件列表。如果返回失败则可以根据需要做出处理，可以是忽略这个行为继续执行后续的节点，或者进行失败后的特殊逻辑。</p>
+<p>一些未验证的想法：</p>
+<ol>
+<li>在因为条件列表中的条件终止时会有不同的终止事件触发。</li>
+</ol>
+
+      
+      <!-- 版权内容开始 -->
+      
+          <! -- 添加版权信息 -->
+<! -- 设置版权信息格式 -->
+<style type="text/css">
+div.article-footer-copyright{
+    border-top:1px solid #d3d3d3;
+    margin: 20px auto;     
+    padding-left:2em;
+    width: 80%;
+}
+div.article-footer-copyright span,.copyright abbr{
+    color:#3d3d3d;
+}
+div.article-footer-copyright{
+        margin-top:2em;
+        padding:1.5em;
+        border:1px solid #d3d3d3;
+        background-color:#DEEBF7;
+}
+div.article-footer-copyright {
+        line-height: 160%;
+        margin: 10px;
+        font-size: 90%;
+        color: #A3A3A3
+}
+</style>
+<br>
+<!-- 版权信息内容在这里 -->
+<div class="article-footer-copyright">
+<center>转载请注明作者及出处,本文作者为<b><a href="/index.html" target="_blank" title="李志伟">李志伟</a></b>,本文标题为<b><a href="/项目中AI实现.html" target="_blank" title="关于项目中AI行为树改进的一些思考">关于项目中AI行为树改进的一些思考</a></b></center>
+
+<center>本文链接为<b><a href="/项目中AI实现.html" target="_blank" title="关于项目中AI行为树改进的一些思考">http://www.lizhiwei.net/项目中AI实现.html</a></b></center>
+</div>
+<! -- 添加版权信息 -->
+
+              
+              <!-- 版权内容结束 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubaodashang.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixindashang.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+
+
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Golang</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Go基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">游戏AI</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.lizhiwei.net/项目中AI实现.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/game_ai_1.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">游戏AI思考（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于节点划分"><span class="toc-number">1.</span> <span class="toc-text">关于节点划分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#瞬间动作节点"><span class="toc-number">1.1.</span> <span class="toc-text">瞬间动作节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持续动作节点"><span class="toc-number">1.2.</span> <span class="toc-text">持续动作节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于持续动作节点的Running状态"><span class="toc-number">2.</span> <span class="toc-text">关于持续动作节点的Running状态</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/page/13/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/12/">12</a><a class="page-number" href="/archives/2018/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/2018/page/15/">15</a><a class="page-number" href="/archives/2018/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/22/">22</a><a class="extend next" rel="next" href="/archives/2018/page/15/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://www.lizhiwei.net/项目中AI实现.html",
+  owner: 'EricLee0107',
+  repo: 'lzw_issues',
+  oauth: {
+    client_id: '11fe20759e004ea65ed4',
+    client_secret: 'c0b825b11b8edee3d0547e1137d9871eb7da993b',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -239,8 +460,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
