@@ -14,4 +14,5 @@ tags: Golang
 
 
 ### Go文档获取
-`go doc` 
+
+- `go doc` 
