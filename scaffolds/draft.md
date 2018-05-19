@@ -1,4 +1,7 @@
 ---
 title: {{ title }}
-tags:
+date: {{ date }}
+author: 李志伟
+tags: []
+
 ---
