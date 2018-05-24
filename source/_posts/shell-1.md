@@ -1,10 +1,14 @@
 ---
-title: shell学习笔记1
+title: shell_1 在终端中进行彩色输出
 author: 李志伟
-tags: [shell]
+tags: []
+copyright: true
+categories:
+  - 未分类
+toc: true
 date: 2018-05-19 16:56:12
-
 ---
+
 
 ## 终端打印
 
