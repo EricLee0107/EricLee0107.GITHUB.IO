@@ -6,6 +6,9 @@ date: 2018-05-03 12:01:06
 tags:
 ---
 
+SVN 和 git提交模板配置
+<!-- more-->
+
 #### 通过TortoiseSVN设置svn commit模板，步骤如下（转）：
 
 1. 在SVN所在的文件夹即项目(网络上是全体的，本地是只针对自己)，右键TortoiseSVN，选择Properties(属性)
