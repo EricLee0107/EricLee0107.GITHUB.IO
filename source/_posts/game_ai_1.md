@@ -1,6 +1,8 @@
 title: 游戏AI思考（一）
-tags: 游戏AI
-date: 2018-03-27 08:37:23
+tags:
+  - 游戏AI
+categories: []
+date: 2018-03-27 08:37:00
 ---
 ### 游戏ai寻路的一些想法
 

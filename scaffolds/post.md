@@ -1,7 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+author: 李志伟
+tags: []
 copyright: true
+categories: [未分类]
 toc: true
 ---
