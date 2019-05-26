@@ -1,1 +1,1 @@
-http://www.lizhiwei.net/leetcode-7-ReverseInteger.html
+http://www.lizhiwei.net/leetcode-9PalindromeNumer.html
