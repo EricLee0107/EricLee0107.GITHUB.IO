@@ -1,1 +1,1 @@
-http://www.lizhiwei.net/项目中AI实现.html
+http://www.lizhiwei.net/leetcode-7-ReverseInteger.html
