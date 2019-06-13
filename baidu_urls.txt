@@ -1,1 +1,1 @@
-http://www.lizhiwei.net/LeetCode-14-LongestCommonPrefix.html
+http://www.lizhiwei.net/leetcode-20-ValidParentheses.html
